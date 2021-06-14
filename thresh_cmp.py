@@ -22,7 +22,7 @@ def get_threshold(latency, event_code):
     mant = thresh_cmp
 
     if ((exp != 0) and not(mant & check_mask)):
-        print("Unexpected error: Upper two bits of mant is 0s\n");
+        print("Unexpected error: Upper two bits of mant is 0\n");
         exit()
 
     print("Thresh_cmp value = " + str(latency) + " : Mantissa = " +
@@ -50,8 +50,9 @@ eventcode = int(eventcode, 16) # parse string into an hex
 thresh_cmp = int(thresh_cmp) # parse string into an integer
 
 if thresh_cmp > MAX_LATENCY:
-    print("Error: Max latency supported by hardware is : %d\n", MAX_LATENCY)
+    print("Error: Max latency supported by hardware is : " + str(MAX_LATENCY))
     print("Try with smaller value\n")
+    exit()
 
 get_threshold(thresh_cmp, eventcode);
 
