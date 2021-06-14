@@ -9,9 +9,6 @@ MAX_LATENCY = 130048
 THRESH_CMP_EXP  = 3
 THRESH_CMP_MANTISSA = 7
 
-#define p10_CNST_THRESH_CMP_VAL(v) (((v) & 0x7ffull) << 43)
-#define p10_CNST_THRESH_CMP_MASK   p10_CNST_THRESH_CMP_VAL(0x7ff)
-
 def get_threshold(latency, event_code):
     exp = 0
     mant = 0
